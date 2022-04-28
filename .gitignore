@@ -1,0 +1,9 @@
+
+### Django ###
+
+
+# Environments
+.env
+.venv
+env/
+

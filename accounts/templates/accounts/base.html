@@ -1,0 +1,505 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <title>{% block title %} {% endblock %}Prevail Solutions</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+
+            
+        <!-- Your custom styles (optional)  -->
+        <link rel="icon" type="image/png"  href="{% static 'logo.png' %}">
+    
+
+ 
+        <style type="text/css">
+.img-logo{
+   width: 80px;
+   height: 80px;
+}
+.faq_area {
+    position: relative;
+    z-index: 0;
+    background-color: #f5f5ff;
+}
+
+.faq-accordian {
+    position: relative;
+    z-index: 0;
+}
+.faq-accordian .card {
+    position: relative;
+    z-index: 0;
+    margin-bottom: 1.5rem;
+}
+.faq-accordian .card:last-child {
+    margin-bottom: 0;
+}
+.faq-accordian .card .card-header {
+    background-color: #ffffff;
+    padding: 0;
+    border-bottom-color: #ebebeb;
+}
+.faq-accordian .card .card-header h6 {
+    cursor: pointer;
+    padding: 1.75rem 2rem;
+    color: #3f43fd;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.faq-accordian .card .card-header h6 span {
+    font-size: 1.5rem;
+}
+.faq-accordian .card .card-header h6.collapsed {
+    color: #070a57;
+}
+.faq-accordian .card .card-header h6.collapsed span {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+.faq-accordian .card .card-body {
+    padding: 1.75rem 2rem;
+}
+.faq-accordian .card .card-body p:last-child {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 575px) {
+    .support-button p {
+        font-size: 14px;
+    }
+}
+
+.support-button i {
+    color: #3f43fd;
+    font-size: 1.25rem;
+}
+@media only screen and (max-width: 575px) {
+    .support-button i {
+        font-size: 1rem;
+    }
+}
+
+.support-button a {
+    text-transform: capitalize;
+    color: #2ecc71;
+}
+@media only screen and (max-width: 575px) {
+    .support-button a {
+        font-size: 13px;
+    }
+}            
+        
+img {
+  margin: 0 auto;
+  display: block;
+  margin-top: 20%;
+}
+
+.ftco-section {
+    z-index: 0;
+}
+.featured-carousel{
+    z-index: 0;
+}
+.deneb_footer .widget_wrapper {
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 200px;
+    padding-bottom: 70px;
+    z-index: 0;
+}
+@media (max-width: 767px) {
+    .deneb_footer .widget_wrapper .widget {
+        margin-bottom: 40px;
+        z-index: 0;
+    }
+}
+.deneb_footer .widget_wrapper .widget .widget_title {
+    margin-bottom: 30px;
+}
+.deneb_footer .widget_wrapper .widget .widget_title h4 {
+    font-weight: bold;
+}
+.deneb_footer .widget_wrapper .widget .widget_title h4:after {
+    content: "";
+    display: block;
+    background: url(#) no-repeat;
+    max-width: 38px;
+    height: 2px;
+    margin-top: 5px;
+}
+.deneb_footer .widget_wrapper .widegt_about p {
+    margin-bottom: 20px;
+}
+.deneb_footer .widget_wrapper .widegt_about .social li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.deneb_footer .widget_wrapper .widegt_about .social li a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #f9e6d4;
+    color: #fba543;
+    font-size: 14px;
+    -webkit-transition: all all 0.5s ease-out 0s;
+    -moz-transition: all all 0.5s ease-out 0s;
+    -ms-transition: all all 0.5s ease-out 0s;
+    -o-transition: all all 0.5s ease-out 0s;
+    transition: all all 0.5s ease-out 0s;
+}
+.deneb_footer .widget_wrapper .widegt_about .social li a:hover,
+.deneb_footer .widget_wrapper .widegt_about .social li a:focus {
+    background-image: -moz-linear-gradient(0deg, #ffbd27 0%, #feb000 100%);
+    background-image: -webkit-linear-gradient(0deg, #ffbd27 0%, #feb000 100%);
+    background-image: -ms-linear-gradient(0deg, #ffbd27 0%, #feb000 100%);
+    color: #fff;
+    box-shadow: 2.5px 4.33px 15px 0px rgba(254, 176, 0, 0.4);
+}
+.deneb_footer .widget_wrapper .widget_link ul li {
+    margin-bottom: 5px;
+}
+.deneb_footer .widget_wrapper .widget_link ul li a {
+    text-transform: capitalize;
+    color: #7a808d;
+}
+.deneb_footer .widget_wrapper .widget_link ul li a:hover,
+.deneb_footer .widget_wrapper .widget_link ul li a:focus {
+    color: #feb000;
+}
+.deneb_footer .widget_wrapper .widget_contact .contact_info .single_info {
+    max-width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.deneb_footer .widget_wrapper .widget_contact .contact_info .single_info .icon {
+    font-size: 12px;
+    color: #feb000;
+    margin-right: 10px;
+}
+.deneb_footer .widget_wrapper .widget_contact .contact_info .single_info .info p a {
+    color: #7a808d;
+}
+.deneb_footer .widget_wrapper .widget_contact .contact_info .single_info .info p span {
+    display: block;
+}
+
+.deneb_footer .copyright_area {
+    background: #edecf0;
+    padding: 10px 0;
+}
+.deneb_footer .copyright_area .copyright_text {
+    text-align: center;
+}
+.deneb_footer .copyright_area .copyright_text p {
+    color: #011a3e;
+}
+.deneb_footer .copyright_area .copyright_text p span {
+    color: #feb000;
+}
+.deneb_cta .cta_wrapper {
+    padding: 45px 50px 42px;
+    max-width: 970px;
+    border-radius: 15px;
+    margin: auto;
+    margin-bottom: -135px;
+    position: relative;
+    background-image: -moz-linear-gradient(0deg, #ffbd27 0%, #feb000 100%);
+    background-image: -webkit-linear-gradient(0deg, #ffbd27 0%, #feb000 100%);
+    background-image: -ms-linear-gradient(0deg, #ffbd27 0%, #feb000 100%);
+    box-shadow: 2.5px 4.33px 15px 0px rgba(254, 176, 0, 0.4);
+    z-index: 0;
+}
+.deneb_cta .cta_wrapper:after {
+    content: "";
+    background: url(#) no-repeat;
+    background-position: bottom;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+.deneb_cta .cta_wrapper .cta_content h3 {
+    color: #fff;
+    font-weight: bold;
+}
+@media (max-width: 767px) {
+    .deneb_cta .cta_wrapper .cta_content h3 {
+        font-size: 24px;
+    }
+}
+.deneb_cta .cta_wrapper .cta_content h3:after {
+    content: "";
+    display: block;
+    background: url(#) no-repeat;
+    max-width: 110px;
+    height: 2px;
+    margin-top: 13px;
+    margin-bottom: 24px;
+}
+.deneb_cta .cta_wrapper .cta_content p {
+    color: #fff;
+}
+.deneb_cta .cta_wrapper .button_box {
+    float: right;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .deneb_cta .cta_wrapper .button_box {
+        float: none;
+        text-align: left;
+        margin-top: 30px;
+    }
+}
+@media (max-width: 767px) {
+    .deneb_cta .cta_wrapper .button_box {
+        float: none;
+        text-align: center;
+        margin-top: 30px;
+    }
+}
+.deneb_cta .cta_wrapper .button_box .deneb_btn {
+    background: #fff;
+    color: #011a3e;
+}
+.deneb_cta .cta_wrapper .button_box .deneb_btn:hover,
+.deneb_cta .cta_wrapper .button_box .deneb_btn:focus {
+    box-shadow: 2.5px 4.33px 15px 0px rgba(0, 0, 0, 0.15);
+}
+
+
+          html,
+          body,
+          header,
+          .view {
+            height: 100%;
+          }
+      
+          @media (max-width: 740px) {
+            html,
+            body,
+            header,
+            .view {
+              height: 1000px;
+            }
+          }
+      
+          @media (min-width: 800px) and (max-width: 850px) {
+            html,
+            body,
+            header,
+            .view {
+              height: 650px;
+            }
+          }
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <nav class="navbar">
+            {% if request.user.is_staff %}
+            <a href="{% url 'home' %}" class="navbar-item">
+                <i class="material-icons navbar-icon">dashboard</i>
+                <span class="navbar-text">Dashboard</span>
+            </a>
+
+            <a href="{% url 'faqs' %}" class="navbar-item ">
+                <i class="material-icons navbar-icon">info</i>
+                <span class="navbar-text">About Us</span>
+            </a>
+
+            <a href="{% url 'account' %}" class="navbar-item ">
+                <i class="material-icons navbar-icon">settings</i>
+                <span class="navbar-text">Profile</span>
+            </a>
+
+
+
+            {% else %}
+
+            <a href="{% url 'projects' %}" class="navbar-item ">
+                <i class="material-icons navbar-icon">home</i>
+                <span class="navbar-text">Home</span>
+            </a>
+
+            <a href="{% url 'user-page' %}" class="navbar-item ">
+                <i class="material-icons navbar-icon">note_add</i>
+                <span class="navbar-text">My Applications</span>
+            </a>
+
+            <a href="{% url 'faqs' %}" class="navbar-item ">
+                <i class="material-icons navbar-icon">info</i>
+                <span class="navbar-text">About Us</span>
+            </a>
+            
+            <a href="{% url 'account' %}" class="navbar-item ">
+                <i class="material-icons navbar-icon">settings</i>
+                <span class="navbar-text">Profile</span>
+            </a>
+            {% endif %}
+        </nav>
+
+        <section class="section">
+                {% block content %}
+                {% endblock %}
+        </section>
+
+    {% if request.user.is_staff %}
+       <section class="deneb_cta">
+           <div class="container">
+               <div class="cta_wrapper">
+                   <div class="row align-items-center">
+                       <div class="col-lg-7">
+                           <div class="cta_content">
+                               <h3>Need us to help you find your dream job? </h3>
+                               <h5><p>or Are you an employer looking for your next star employee?</p></h5>
+                               <h3><p>Apply for your tailored solutions now!</p></h3>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+    {% else %}
+        <section class="deneb_cta">
+           <div class="container">
+               <div class="cta_wrapper">
+                   <div class="row align-items-center">
+                       <div class="col-lg-7">
+                           <div class="cta_content">
+                               <h3>Need us to help you find your dream job? </h3>
+                               <h5><p>or Are you an employer looking for your next star employee?</p></h5>
+                           </div>
+                       </div>
+                       <div class="col-lg-5">
+                           <div class="button_box">
+                               <a href="{% url 'user_investment' %}" class="btn btn-warning">Apply now</a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+    {% endif %}
+       <footer class="deneb_footer">
+           <div class="widget_wrapper" style="background-image: url(http://demo.tortoizthemes.com/deneb-html/deneb-ltr/assets/images/footer_bg.png);">
+               <div class="container">
+                   <div class="row">
+                       <div class="col-lg-4 col-md-6 col-12">
+                           <div class="widget widegt_about">
+                               <div class="widget_title">
+                                   <img src="#" class="img-fluid" alt="">
+                               </div>
+                               <p>Redefining Excellence in workplace performance</p>
+                               <strong><p>Prevail Solutions, LLC</p></strong>
+                               <strong><p>Recruitment |Training |Consulting</p></strong>
+                                <hr>
+                           </div>
+                       </div>
+                       <div class="col-lg-4 col-md-6 col-sm-12">
+                           <div class="widget widget_contact">
+                               <div class="widget_title">
+                                   <h4>Contact Us</h4>
+                               </div>
+                               <div class="contact_info">
+                                   <div class="single_info">
+                                       <div class="icon">
+                                           <i class="fas fa-phone-alt"></i>
+                                       </div>
+                                       <div class="info">
+                                           <p><a href="tel:+2407554479">+240-755-4479</a></p>
+                                       </div>
+                                     <div class="single_info">
+                                       <div class="icon">
+                                           <i class="fas fa-phone-alt"></i>
+                                       </div>
+                                       <div class="info">
+                                           <p><a href="tel:+4432928985">+443-292-8985</a></p>
+                                       </div>
+                                   </div>
+                                   <div class="single_info">
+                                       <div class="icon">
+                                           <i class="fas fa-envelope"></i>
+                                       </div>
+                                       <div class="info">
+                                           <p><a href="mailto:Solutionsprevail007@gmail.com">Solutionsprevail007@gmail.com</a></p>
+                                       </div>
+                                   </div>
+                                   <div class="single_info">
+                                       <div class="icon">
+                                           <i class="fas fa-map-marker-alt"></i>
+                                       </div>
+                                       <div class="info">
+                                           <p>Crofton, MD<span>United States</span></p>
+                                           <p>Registered Business Number: W22302269</p>
+
+
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <div class="copyright_area">
+               <div class="container">
+                   <div class="row">
+                       <div class="col-lg-12">
+                           <div class="copyright_text">
+                               <p>Copyright &copy; 2022 All rights reserved.</p>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </footer>
+
+        {% block scripts %}
+        <script src="https://kit.fontawesome.com/4764f4dcde.js" crossorigin="anonymous"></script>
+        <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'js/popper.js' %}" type="text/javascript"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'js/main.js' %}" type="text/javascript"></script>
+        {% endblock %}
+    </body>
+</html>

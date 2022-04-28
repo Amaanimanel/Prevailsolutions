@@ -1,0 +1,45 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .profile-pic{
+        max-width:200px;
+        max-height:200px;
+        margin:0 auto;
+        border-radius:50%;
+    }
+</style>
+<br>
+<div class="row">
+    <div class="col-md-3">
+        <div class="card card-body">
+            <a class="btn btn-warning" href="{% url 'home' %}"> &#8592; Back to Home</a>
+            <hr>
+            <h3 stlye="text-align: center">Account Settings</h3>
+            <hr>
+            <span >{{ request.user }}</span>
+            <br>
+            <br>
+            <span><a href="{% url 'logout' %}">Logout</a></span>
+            <a href="{% url 'logout' %}" class="table-link text-danger">
+                <span class="fa-stack">
+                    <i class="fa fa-square fa-stack-2x"></i>
+                    <i class="fa fa-power-off fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    
+    <div class="col-md-9">
+        <div class="card card-body">
+            <form method="POST" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="btn btn-primary" type="submit" 
+            name="update Information">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

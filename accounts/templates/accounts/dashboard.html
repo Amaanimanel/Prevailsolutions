@@ -1,0 +1,175 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block content %}
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img src="{% static 'logo.jpg' %}" class="img-logo"/>
+                <br>
+                <h1 class="heading-section mb-5 pb-md-4">Prevail Solutions</h1>
+            </div>
+            <div class="col-md-12">
+                <div class="featured-carousel owl-carousel">
+                    <div class="item">
+                        <div class="work">
+                            <div class="img d-flex align-items-center justify-content-center rounded">
+                                <img class="img d-flex align-items-center justify-content-center rounded" src="{% static 'images/work-1.jpg' %}">
+                            </div>
+                            <br>
+                            <div class="text pt-3 w-100 text-center">
+                                <h3><a href="#">We hire</a></h3>
+                                <span>Excellent Employees</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="work">
+                            <div class="img d-flex align-items-center justify-content-center rounded">
+                                <img class="img d-flex align-items-center justify-content-center rounded" src="{% static 'images/work-2.jpg' %}">
+                            </div>
+                            <br>
+                            <div class="text pt-3 w-100 text-center">
+                                <h3><a href="#">We train</a></h3>
+                                <span>Your new employees</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="work">
+                            <div class="img d-flex align-items-center justify-content-center rounded">
+                                <img class="img d-flex align-items-center justify-content-center rounded" src="{% static 'images/work-3.jpg' %}">
+                            </div>
+                            <br>
+                            <div class="text pt-3 w-100 text-center">
+                                <h3><a href="#">We accelerate</a></h3>
+                                <span>Your career</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="work">
+                            <div class="img d-flex align-items-center justify-content-center rounded">
+                                <img class="img d-flex align-items-center justify-content-center rounded" src="{% static 'images/work-4.jpg' %}">
+                            </div>
+                            <br>
+                            <div class="text pt-3 w-100 text-center">
+                                <h3><a href="#">Job satisfaction</a></h3>
+                                <span>is what you deserve</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="work">
+                            <div class="img d-flex align-items-center justify-content-center rounded">
+                                <img class="img d-flex align-items-center justify-content-center rounded" src="{% static 'images/work-5.jpg' %}">
+                            </div>
+                            <br>
+                            <div class="text pt-3 w-100 text-center">
+                                <h3><a href="#">Productivity</a></h3>
+                                <span>comes from effective hiring</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="work">
+                            <div class="img d-flex align-items-center justify-content-center rounded">
+                                <img class="img d-flex align-items-center justify-content-center rounded" src="{% static 'images/work-6.jpg' %}">
+
+                            </div>
+                            <br>
+                            <div class="text pt-3 w-100 text-center">
+                                <h3><a href="#">Let's take your business</a></h3>
+                                <span>to the next level</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<div class="col">
+    <div class="col-md">
+        <div class="card text-center text-white mb-3" id="total-investments">
+            <div class="card-header">
+                <h5 class="card-title">Total Applicants</h5>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">{{ total_investors }}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+       
+<div class="row">
+    <div class="col-md-5">
+        <div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th></th>
+                    <th>Candidate</th>
+                    <th></th>
+                </tr>
+
+                {% for investor in investors %}
+                    <tr>
+                        <td><a class="btn btn-sm btn-info" href="{% url 'investor' investor.id %}">View</a></td>
+                        <td>{{ investor.name }}</td>
+                        <td> </td>
+                    </tr>
+                {% endfor %}
+                                 
+
+            </table>
+        </div>
+    </div>
+<br>
+<br>
+    <div class="col-md-7">
+        <h5>LAST 5 APPLICATION FORMS </h5>
+        <hr>
+        <div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th>Salary</th>
+                    <th>Applicant</th>
+                    <th>Position</th>
+                    <th></th>
+                </tr>
+<br>
+
+<br>
+                {% for investment in investments %}
+                    <tr>
+                        <td>₵{{ investment.amount }}</td>
+                        <td>{{ investment.investor }} or {{ investment.user }}</td>
+                        <td>{{ investment.position}}</td>
+
+                        <td>
+                            <a href="{% url 'update_investment' investment.id %}" class="table-link text-info">
+                                <span class="fa-stack">
+                                    <i class="fa fa-square fa-stack-2x"></i>
+                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                            <a href="{% url 'delete_investment' investment.id %}" class="table-link text-danger">
+                                <span class="fa-stack">
+                                    <i class="fa fa-square fa-stack-2x"></i>
+                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock %}

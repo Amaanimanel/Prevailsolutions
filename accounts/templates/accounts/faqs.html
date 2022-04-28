@@ -1,0 +1,108 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="ftco-section">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img src="{% static 'logo.jpg' %}" class="img-logo"/>
+                <br>
+                <h1 class="heading-section mb-5 pb-md-4">Prevail Solutions</h1>
+            </div>
+            <div class="col-md-12">
+                <div class="featured-carousel owl-carousel">
+                    <div class="item">
+                        <div class="work">
+                            <div class="img d-flex align-items-center justify-content-center rounded">
+                                <img class="img d-flex align-items-center justify-content-center rounded" src="{% static 'images/talent-1.png' %}">
+                            </div>
+                            <br>
+                            <div class="text pt-3 w-100 text-center">
+                                <h3><a href="#">We hire</a></h3>
+                                <span>Excellent Employees</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="work">
+                            <div class="img d-flex align-items-center justify-content-center rounded">
+                                <img class="img d-flex align-items-center justify-content-center rounded" src="{% static 'images/talent-2.png' %}">
+                            </div>
+                            <br>
+                            <div class="text pt-3 w-100 text-center">
+                                <h3><a href="#">We train</a></h3>
+                                <span>Your new employees</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="faq_area section_padding_130" id="faq">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-8 col-lg-6">
+                <!-- Section Heading-->
+                <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                    <h3><span>Frequently </span> Asked Questions</h3>
+                    <p>At Prevail Solutions we provide every sort of employment; from temporary, contractual to permanent employees for all kinds of job descriptions</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <!-- FAQ Area-->
+            <div class="col-12 col-sm-10 col-lg-8">
+                <div class="accordion faq-accordian" id="faqAccordion">
+                    <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                        <div class="card-header" id="headingOne">
+                            <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">What is PREVAIL SOLUTIONS about?<span class="lni-chevron-up"></span></h6>
+                        </div>
+                        <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                            <div class="card-body">
+                                <p>There is nothing more valuable and satisfying than finding quality candidates for the right job.
+We are dedicated and committed to helping you build a workforce of excellence.</p>
+</p>
+                                <p>At Prevail Solutions we provide recruitment, training, and consulting services that are designed to meet the specific needs of employers. We match the employers with qualified candidates after reviewing their needs, nature of work, skill set and cost-effectiveness. At Prevail Solutions we provide every sort of employment, temporary or contractual services on certain conditions and provide permanent staff demand in IT, Accounting and Finance, Healthcare, Logistics, Reprographics, General Business, Office Administration and Management
+We are driven by a passion to see you succeed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                        <div class="card-header" id="headingFour">
+                            <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">What type of TRAINING AND CONSULTING do we provide?<span class="lni-chevron-up"></span></h6>
+                        </div>
+                        <div class="collapse" id="collapseFour" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                            <div class="card-body">
+                                <p>Prevail Solutions provides first class training and consulting services to our clients that are tailored to meet the specific needs of our clients.</p>
+                                <p>Training services are offered to cover topics in Healthcare, Leadership, Occupational and Physical Therapy, Accounting and Finance, with Consulting services provided for new business start-ups, life coaching, mental health community-based programs, workplace redesign to reduce injury and promote staff retention and corporate wellness.</p>
+                                <p>The company is situated in the Crofton area of Maryland, where the head office operates from. We offer our clients quality and well qualified candidates to meet their staffing needs and their budget. We offer flexibility for our clients in different sectors to help them find suitable candidates.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                        <div class="card-header" id="headingTwo">
+                            <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">How do we serve EMPLOYERS?<span class="lni-chevron-up"></span></h6>
+                        </div>
+                        <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                            <div class="card-body">
+                                <p> At Prevail Solutions we work in collaboration with employers to provide different packages in recruitment, training and consulting services that are tailored to meet the specific needs of your company.</p>
+                                <p>We provide every sort of employment temporary or contractual services on certain conditions and provide permanent staff on demand. We offer tailored Training in healthcare, accounting, finance, and corporate wellness programs. Our Consulting services are geared towards staff development, compliance, company growth and team building. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Support Button-->
+                <div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <i class="lni-emoji-sad"></i>
+                    <p class="mb-0 px-2">Can't find your answers?</p>
+                    <a href="tel:+2407554479" target="_blank"> Contact us</a>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
